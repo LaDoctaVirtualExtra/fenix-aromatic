@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fenix Aromatic</title>
+<meta name="description" content="Fenix Aromatic: velas aromáticas. Catálogo, consultas por WhatsApp y velas personalizadas por aroma, color y forma.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E🕯️%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script>document.documentElement.classList.add('cargando');</script>
+</head>
+<body>
+
+<!-- Iconos (se usan con <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-ig" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3.5" y="3.5" width="17" height="17" rx="5"/>
+      <circle cx="12" cy="12" r="4"/>
+    </g>
+    <circle cx="17.3" cy="6.8" r="1.1" fill="currentColor"/>
+  </symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24">
+    <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3.5 20.5l1.3-4.2A8.5 8.5 0 1 1 8 19.3z"/>
+      <path d="M9.2 8.6c0 3.4 2.8 6.2 6.2 6.2l.9-1.5-1.9-.9-.9.8a4.3 4.3 0 0 1-1.9-1.9l.8-.9-.9-1.9z"/>
+    </g>
+  </symbol>
+</svg>
+
+<header class="site-header" id="inicio">
+  <div class="wrap header-inner">
+    <nav class="nav nav-left" aria-label="Principal">
+      <a href="#catalogo" data-c="ajustes.menu_catalogo"></a>
+      <a href="#personalizar" data-c="ajustes.menu_personalizar"></a>
+    </nav>
+    <a class="logo" href="#inicio" data-aria="inicio">
+      <span class="logo-main" data-c="ajustes.logo_principal"></span>
+      <span class="logo-sub" data-c="ajustes.logo_secundario"></span>
+    </a>
+    <div class="nav nav-right">
+      <a href="#contacto" data-c="ajustes.menu_contacto"></a>
+      <span class="socials">
+        <a class="icon-link" data-ig data-aria="instagram" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg></a>
+        <a class="icon-link" data-wa="general" href="#" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg></a>
+      </span>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <!-- Vela destacada (contenido en content/inicio.json) -->
+  <section class="hero" aria-labelledby="hero-nombre">
+    <div class="wrap hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow" data-c="inicio.etiqueta"></p>
+        <h1 id="hero-nombre" data-c="inicio.titulo"></h1>
+        <p class="hero-meta" data-c="inicio.descripcion"></p>
+        <p class="hero-price" data-c="inicio.precio"></p>
+        <div class="hero-actions">
+          <a class="btn btn-dark" id="hero-wa" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span data-c="inicio.boton_principal"></span></a>
+          <a class="btn btn-line" href="#catalogo" data-c="inicio.boton_secundario"></a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <img id="hero-img" alt="" fetchpriority="high">
+      </div>
+    </div>
+  </section>
+
+  <!-- Catálogo (las tarjetas se arman con content/catalogo.json) -->
+  <section class="section" id="catalogo" aria-labelledby="catalogo-titulo">
+    <div class="wrap">
+      <h2 class="section-title" id="catalogo-titulo" data-c="catalogo.titulo"></h2>
+      <p class="section-lead" data-c="catalogo.descripcion"></p>
+      <div class="grid" id="grid-catalogo"></div>
+    </div>
+  </section>
+
+  <!-- Personalizar (opciones en content/personalizar.json) -->
+  <section class="section flush-top" id="personalizar" aria-labelledby="personalizar-titulo">
+    <div class="wrap">
+      <h2 class="section-title" id="personalizar-titulo" data-c="personalizar.titulo"></h2>
+      <p class="section-lead" data-c="personalizar.descripcion"></p>
+
+      <div class="custom-grid">
+
+        <!-- Vista previa: la forma se resuelve con CSS y el color / resumen con js/app.js -->
+        <div class="preview">
+          <svg class="preview-svg" viewBox="0 0 200 230" role="img" aria-label="Vista previa de tu vela" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pv-s" x1="0" x2="1" y1="0" y2="0">
+                <stop offset="0" stop-color="#fff" stop-opacity=".24"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".24"/>
+              </linearGradient>
+              <radialGradient id="pv-r" cx=".35" cy=".3" r=".8">
+                <stop offset="0" stop-color="#fff" stop-opacity=".38"/><stop offset=".5" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".26"/>
+              </radialGradient>
+              <radialGradient id="pv-g">
+                <stop offset="0" stop-color="#ff9a2e" stop-opacity=".38"/><stop offset="1" stop-color="#ff9a2e" stop-opacity="0"/>
+              </radialGradient>
+            </defs>
+            <ellipse cx="100" cy="198" rx="70" ry="8" fill="#14110f" fill-opacity=".14"/>
+
+            <g class="shape s-cilindro">
+              <path class="c-body" d="M64 96V194A36 8 0 0 0 136 194V96Z"/>
+              <path d="M64 96V194A36 8 0 0 0 136 194V96Z" fill="url(#pv-s)"/>
+              <ellipse class="c-top" cx="100" cy="96" rx="36" ry="8"/>
+              <ellipse class="c-dark" cx="100" cy="96" rx="6" ry="2.2"/>
+              <circle cx="100" cy="68" r="34" fill="url(#pv-g)"/>
+              <line x1="100" y1="96" x2="100" y2="86" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M100 88C110 78 107 60 100 46C93 60 90 78 100 88Z" fill="#ff9a2e"/><path d="M100 87C105 81 104 71 100 62C96 71 95 81 100 87Z" fill="#ffe28a"/></g>
+            </g>
+
+            <g class="shape s-pilar">
+              <path class="c-body" d="M72 62V194A28 7 0 0 0 128 194V62Z"/>
+              <path d="M72 62V194A28 7 0 0 0 128 194V62Z" fill="url(#pv-s)"/>
+              <ellipse class="c-top" cx="100" cy="62" rx="28" ry="7"/>
+              <ellipse class="c-dark" cx="100" cy="62" rx="5" ry="1.8"/>
+              <circle cx="100" cy="34" r="34" fill="url(#pv-g)"/>
+              <line x1="100" y1="62" x2="100" y2="52" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M100 54C110 44 107 26 100 12C93 26 90 44 100 54Z" fill="#ff9a2e"/><path d="M100 53C105 47 104 37 100 28C96 37 95 47 100 53Z" fill="#ffe28a"/></g>
+            </g>
+
+            <g class="shape s-cono">
+              <path class="c-body" d="M56 194A44 8 0 0 0 144 194L120 88H80Z"/>
+              <path d="M56 194A44 8 0 0 0 144 194L120 88H80Z" fill="url(#pv-s)"/>
+              <ellipse class="c-top" cx="100" cy="88" rx="20" ry="5"/>
+              <ellipse class="c-dark" cx="100" cy="88" rx="4" ry="1.5"/>
+              <circle cx="100" cy="60" r="34" fill="url(#pv-g)"/>
+              <line x1="100" y1="88" x2="100" y2="78" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M100 80C110 70 107 52 100 38C93 52 90 70 100 80Z" fill="#ff9a2e"/><path d="M100 79C105 73 104 63 100 54C96 63 95 73 100 79Z" fill="#ffe28a"/></g>
+            </g>
+
+            <g class="shape s-esfera">
+              <circle class="c-body" cx="100" cy="146" r="52"/>
+              <circle cx="100" cy="146" r="52" fill="url(#pv-r)"/>
+              <ellipse class="c-dark" cx="100" cy="98" rx="9" ry="3"/>
+              <circle cx="100" cy="70" r="34" fill="url(#pv-g)"/>
+              <line x1="100" y1="98" x2="100" y2="88" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M100 90C110 80 107 62 100 48C93 62 90 80 100 90Z" fill="#ff9a2e"/><path d="M100 89C105 83 104 73 100 64C96 73 95 83 100 89Z" fill="#ffe28a"/></g>
+            </g>
+
+            <g class="shape s-cubo">
+              <polygon class="c-dark" points="134,118 158,100 158,176 134,194"/>
+              <rect class="c-body" x="62" y="118" width="72" height="76"/>
+              <polygon class="c-top" points="62,118 86,100 158,100 134,118"/>
+              <ellipse class="c-dark" cx="110" cy="109" rx="9" ry="2.6"/>
+              <circle cx="110" cy="81" r="34" fill="url(#pv-g)"/>
+              <line x1="110" y1="109" x2="110" y2="99" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M110 101C120 91 117 73 110 59C103 73 100 91 110 101Z" fill="#ff9a2e"/><path d="M110 100C115 94 114 84 110 75C106 84 105 94 110 100Z" fill="#ffe28a"/></g>
+            </g>
+
+            <g class="shape s-jar">
+              <path class="c-body" d="M52 108V180Q52 194 66 194H134Q148 194 148 180V108Z"/>
+              <path d="M52 108V180Q52 194 66 194H134Q148 194 148 180V108Z" fill="url(#pv-s)"/>
+              <ellipse class="c-rim" cx="100" cy="108" rx="48" ry="10"/>
+              <ellipse class="c-wax" cx="100" cy="109" rx="42" ry="8"/>
+              <ellipse class="c-well" cx="100" cy="109" rx="6" ry="2"/>
+              <rect x="76" y="140" width="48" height="30" rx="3" fill="#faf8f5"/>
+              <text x="100" y="159" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="11" font-weight="700" fill="#1c1a18">fenix</text>
+              <circle cx="100" cy="81" r="34" fill="url(#pv-g)"/>
+              <line x1="100" y1="109" x2="100" y2="99" stroke="#3a2a22" stroke-width="2.2" stroke-linecap="round"/>
+              <g class="flame"><path d="M100 101C110 91 107 73 100 59C93 73 90 91 100 101Z" fill="#ff9a2e"/><path d="M100 100C105 94 104 84 100 75C96 84 95 94 100 100Z" fill="#ffe28a"/></g>
+            </g>
+          </svg>
+          <p class="summary" id="resumen-vela" aria-live="polite"></p>
+          <p class="note" data-c="personalizar.nota_vista_previa"></p>
+        </div>
+
+        <!-- El pedido se arma con JS y se abre WhatsApp con el mensaje ya escrito (js/app.js) -->
+        <form id="form-personalizar" action="#" method="get">
+
+          <fieldset>
+            <legend data-c="personalizar.titulo_aroma"></legend>
+            <div class="chips" id="lista-aromas"></div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-c="personalizar.titulo_color"></legend>
+            <div class="swatches" id="lista-colores"></div>
+            <div class="field" style="margin-top:16px">
+              <label for="otro-color" data-c="personalizar.otro_color_etiqueta"></label>
+              <input type="text" id="otro-color" name="Otro color" maxlength="60" autocomplete="off" data-c-ph="personalizar.otro_color_ejemplo">
+            </div>
+          </fieldset>
+
+          <fieldset class="shape-group">
+            <legend data-c="personalizar.titulo_forma"></legend>
+            <div class="chips" id="lista-formas"></div>
+            <div class="shape-other">
+              <label for="otra-forma" data-c="personalizar.otra_forma_etiqueta"></label>
+              <input type="text" id="otra-forma" name="Otra forma" maxlength="80" autocomplete="off" data-c-ph="personalizar.otra_forma_ejemplo">
+              <p class="hint" data-c="personalizar.otra_forma_aviso"></p>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend data-c="personalizar.titulo_detalles"></legend>
+            <div class="field">
+              <label for="cantidad" data-c="personalizar.cantidad_etiqueta"></label>
+              <input type="number" id="cantidad" name="Cantidad" min="1" max="99" value="1" inputmode="numeric">
+            </div>
+            <div class="field">
+              <label for="notas" data-c="personalizar.notas_etiqueta"></label>
+              <textarea id="notas" name="Notas" maxlength="400" data-c-ph="personalizar.notas_ejemplo"></textarea>
+            </div>
+          </fieldset>
+
+          <div class="cta-row">
+            <button class="btn btn-dark btn-lg" type="submit"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span data-c="personalizar.boton_enviar"></span></button>
+            <p class="hint" data-c="personalizar.aviso_boton"></p>
+          </div>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto (content/contacto.json) -->
+  <section class="section flush-top" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="wrap">
+      <div class="contact">
+        <h2 class="section-title" id="contacto-titulo" data-c="contacto.titulo"></h2>
+        <p data-c="contacto.texto"></p>
+        <div class="contact-actions">
+          <a class="btn btn-dark" data-wa="general" href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-wa"/></svg><span data-c="contacto.boton_whatsapp"></span></a>
+          <a class="btn btn-line" data-ig href="#" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg><span data-c="instagram.texto_boton_contacto"></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <nav class="footer-links" aria-label="Pie de página">
+        <a href="#catalogo" data-c="ajustes.menu_catalogo"></a>
+        <a href="#personalizar" data-c="ajustes.menu_personalizar"></a>
+        <a href="#contacto" data-c="ajustes.menu_contacto"></a>
+      </nav>
+      <a class="logo" href="#inicio" data-aria="arriba">
+        <span class="logo-main" data-c="ajustes.logo_principal"></span>
+        <span class="logo-sub" data-c="ajustes.logo_secundario"></span>
+      </a>
+      <div class="footer-social">
+        <a data-ig href="#" target="_blank" rel="noopener"><span data-c="instagram.texto_pie"></span> <svg class="ico" aria-hidden="true"><use href="#i-ig"/></svg></a>
+      </div>
+    </div>
+    <!-- Créditos fijos: NO están en el CMS, no se pueden editar desde el administrador -->
+    <p class="legal"><a href="https://ladoctavirtual.com/design/" target="_blank" rel="noopener">www.ladoctavirtual.com/design</a></p>
+    <p class="credit">Diseñado por <a href="https://www.instagram.com/ladoctavirtualdiseno/" target="_blank" rel="noopener">La Docta Virtual Diseño</a></p>
+  </div>
+</footer>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<noscript><p style="padding:24px;text-align:center">Para ver este sitio necesitás activar JavaScript.</p></noscript>
+
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script src="js/contenido.js" defer></script>
+<script src="js/app.js" defer></script>
+<script>
+  /* Invitaciones y recuperación de clave de Netlify Identity: abre la ventana y, al entrar, lleva al administrador */
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', function (user) {
+      if (!user) window.netlifyIdentity.on('login', function () { document.location.href = '/admin/'; });
+    });
+  }
+</script>
+</body>
+</html>
