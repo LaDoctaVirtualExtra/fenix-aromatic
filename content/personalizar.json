@@ -1,0 +1,119 @@
+{
+  "titulo": "Personalizar",
+  "descripcion": "Elegí aroma, color y forma. La vista previa cambia con tu elección y el pedido sale por WhatsApp.",
+  "nota_vista_previa": "Vista previa orientativa. El resultado final puede variar levemente.",
+  "titulo_aroma": "Aroma",
+  "aromas": [
+    "Lavanda",
+    "Vainilla",
+    "Sándalo",
+    "Canela",
+    "Cítrico",
+    "Coco",
+    "Rosa",
+    "Cedro",
+    "Higo"
+  ],
+  "titulo_color": "Color",
+  "colores": [
+    {
+      "nombre": "Marfil",
+      "hex": "#efe6d6",
+      "inicial": false
+    },
+    {
+      "nombre": "Lila",
+      "hex": "#b9a5d6",
+      "inicial": true
+    },
+    {
+      "nombre": "Terracota",
+      "hex": "#c4623f",
+      "inicial": false
+    },
+    {
+      "nombre": "Oliva",
+      "hex": "#7d8450",
+      "inicial": false
+    },
+    {
+      "nombre": "Rosa té",
+      "hex": "#e0a9a3",
+      "inicial": false
+    },
+    {
+      "nombre": "Grafito",
+      "hex": "#3b3a3a",
+      "inicial": false
+    },
+    {
+      "nombre": "Azul niebla",
+      "hex": "#8fa7b8",
+      "inicial": false
+    },
+    {
+      "nombre": "Mostaza",
+      "hex": "#d6a63a",
+      "inicial": false
+    }
+  ],
+  "otro_color_etiqueta": "¿Querés otro color? Escribilo acá (opcional)",
+  "otro_color_ejemplo": "Ej.: verde agua, bordó",
+  "titulo_forma": "Forma",
+  "formas": [
+    {
+      "clave": "cilindro",
+      "nombre": "Cilíndrica",
+      "visible": true,
+      "inicial": false
+    },
+    {
+      "clave": "pilar",
+      "nombre": "Pilar",
+      "visible": true,
+      "inicial": true
+    },
+    {
+      "clave": "cono",
+      "nombre": "Cónica",
+      "visible": true,
+      "inicial": false
+    },
+    {
+      "clave": "esfera",
+      "nombre": "Esfera",
+      "visible": true,
+      "inicial": false
+    },
+    {
+      "clave": "cubo",
+      "nombre": "Cubo",
+      "visible": true,
+      "inicial": false
+    },
+    {
+      "clave": "jar",
+      "nombre": "En frasco",
+      "visible": true,
+      "inicial": false
+    },
+    {
+      "clave": "otra",
+      "nombre": "Otra forma…",
+      "visible": true,
+      "inicial": false
+    }
+  ],
+  "otra_forma_etiqueta": "Escribí la forma que querés",
+  "otra_forma_ejemplo": "Ej.: corazón, concha, gato sentado",
+  "otra_forma_aviso": "La confirmamos con vos antes de hacerla.",
+  "resumen_otra_forma": "Forma a elección",
+  "titulo_detalles": "Detalles",
+  "cantidad_etiqueta": "Cantidad",
+  "notas_etiqueta": "Notas (opcional)",
+  "notas_ejemplo": "Iniciales, una frase, tamaño, fecha de entrega",
+  "boton_enviar": "Enviar pedido por WhatsApp",
+  "aviso_boton": "Se abre WhatsApp con el pedido ya escrito. Nada se envía hasta que lo mandes vos.",
+  "whatsapp_inicio": "Hola Fenix Aromatic, quiero pedir una vela personalizada:",
+  "whatsapp_cierre": "¿Me confirmás precio y tiempos? ¡Gracias!"
+}

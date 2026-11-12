@@ -1,0 +1,173 @@
+# Fenix Aromatic - configuración de Decap CMS -Cha4ly (Garcia Gallardo Armando)
+# Edita los archivos de /content (JSON). Cada vez que se guarda y publica un cambio,
+# Decap lo sube a GitHub y Netlify vuelve a publicar el sitio (tarda ~1 minuto).
+
+backend:
+  name: github
+  repo: LaDoctaVirtualExtra/fenix-aromatic   # <-- CAMBIAR: usuario/repositorio de GitHub, ej.: andromeda/fenix-aromatic
+  branch: main                      # <-- CAMBIAR si la rama principal tiene otro nombre (ej.: master)
+  # Con Netlify, el inicio de sesión con GitHub se activa en el panel del sitio
+  # (Site configuration > Access & security > OAuth > Install provider > GitHub). Ver LEEME.md.
+
+# Solo se usa al probar en tu computadora (http://localhost/admin/ con "npx decap-server"). En Netlify se ignora.
+local_backend: true
+
+locale: es
+media_folder: "img"       # donde se guardan las fotos que se suben
+public_folder: "/img"     # como se escriben las rutas en los JSON
+site_url: ""              # opcional: poné la dirección del sitio (https://...) para el enlace "Ver sitio"
+
+collections:
+  - name: sitio
+    label: "Contenido del sitio"
+    editor:
+      preview: false
+    files:
+
+      # ---------------------------------------------------------------- AJUSTES
+      - name: ajustes
+        label: "Ajustes generales"
+        file: "content/ajustes.json"
+        fields:
+          - { label: "Nombre de la marca", name: marca, widget: string, hint: "Se usa en mensajes de WhatsApp y al compartir." }
+          - { label: "Título de la pestaña del navegador", name: titulo_pagina, widget: string }
+          - { label: "Descripción para Google", name: descripcion_pagina, widget: text, hint: "Texto corto que aparece en los buscadores." }
+          - label: "WhatsApp del negocio"
+            name: whatsapp
+            widget: string
+            hint: "Código de país + área + número, solo números, sin + ni espacios. Ej.: 5491165245280"
+            pattern: ['^\d{8,15}$', "Solo números, sin +, espacios ni guiones (8 a 15 dígitos)."]
+          - { label: "Mensaje de WhatsApp: consulta general", name: mensaje_consulta_general, widget: string, hint: "Mensaje que llega al tocar los botones generales de WhatsApp." }
+          - { label: "Mensaje de WhatsApp: inicio de consulta por producto", name: mensaje_consulta_producto, widget: string, hint: "Se completa solo con el nombre del producto y su referencia. Ej.: Hola Fenix Aromatic, quiero consultar por:" }
+          - { label: "Texto final al compartir un producto", name: texto_compartir_cierre, widget: string }
+          - { label: "Logo: palabra principal", name: logo_principal, widget: string }
+          - { label: "Logo: palabra de abajo", name: logo_secundario, widget: string }
+          - { label: "Menú: Catálogo", name: menu_catalogo, widget: string }
+          - { label: "Menú: Personalizar", name: menu_personalizar, widget: string }
+          - { label: "Menú: Contacto", name: menu_contacto, widget: string }
+
+      # ----------------------------------------------------------------- INICIO
+      - name: inicio
+        label: "Inicio · Vela destacada"
+        file: "content/inicio.json"
+        fields:
+          - { label: "Etiqueta superior", name: etiqueta, widget: string }
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Descripción", name: descripcion, widget: text }
+          - { label: "Precio", name: precio, widget: string, hint: "Escribilo como querés que se vea. Ej.: $ 7.500" }
+          - { label: "Botón principal (WhatsApp)", name: boton_principal, widget: string }
+          - { label: "Botón secundario", name: boton_secundario, widget: string }
+          - { label: "Imagen", name: imagen, widget: image, required: false, hint: "Foto de la vela destacada." }
+          - { label: "Descripción de la imagen (para accesibilidad)", name: imagen_alt, widget: string, required: false }
+
+      # --------------------------------------------------------------- CATÁLOGO
+      - name: catalogo
+        label: "Catálogo de productos"
+        file: "content/catalogo.json"
+        fields:
+          - { label: "Título de la sección", name: titulo, widget: string }
+          - { label: "Texto debajo del título", name: descripcion, widget: text }
+          - { label: "Texto del botón de consulta", name: boton_consultar, widget: string }
+          - { label: "Texto del botón Compartir", name: boton_compartir, widget: string }
+          - label: "Productos"
+            name: productos
+            widget: list
+            label_singular: "producto"
+            summary: "{{fields.nombre}} · {{fields.precio}}"
+            add_to_top: false
+            hint: "Para agregar una vela nueva tocá «Agregar producto» al final de la lista. Podés ordenarlos arrastrando."
+            fields:
+              - { label: "Mostrar en el sitio", name: visible, widget: boolean, default: true, hint: "Desactivá para ocultar el producto sin borrarlo." }
+              - { label: "Nombre", name: nombre, widget: string }
+              - { label: "Precio", name: precio, widget: string, required: false, hint: "Escribilo como querés que se vea. Ej.: $ 6.500" }
+              - { label: "Descripción", name: descripcion, widget: text, required: false }
+              - { label: "Foto", name: imagen, widget: image, required: false, hint: "Mejor vertical (4:5), por ejemplo 800 x 1000 px." }
+              - { label: "Descripción de la foto (para accesibilidad)", name: imagen_alt, widget: string, required: false }
+              - { label: "Referencia", name: ref, widget: string, required: false, hint: "Código interno, ej.: FA-015. Si lo dejás vacío se genera solo. Debe ser distinto en cada producto." }
+
+      # ------------------------------------------------------------ PERSONALIZAR
+      - name: personalizar
+        label: "Personalizar (armá tu vela)"
+        file: "content/personalizar.json"
+        fields:
+          - { label: "Título de la sección", name: titulo, widget: string }
+          - { label: "Texto debajo del título", name: descripcion, widget: text }
+          - { label: "Nota bajo la vista previa", name: nota_vista_previa, widget: string, required: false }
+
+          - { label: "Título del grupo Aroma", name: titulo_aroma, widget: string }
+          - label: "Aromas"
+            name: aromas
+            widget: list
+            label_singular: "aroma"
+            hint: "El primero aparece marcado al entrar. Podés agregar, borrar y ordenar."
+            field: { label: "Aroma", name: aroma, widget: string }
+
+          - { label: "Título del grupo Color", name: titulo_color, widget: string }
+          - label: "Colores"
+            name: colores
+            widget: list
+            label_singular: "color"
+            summary: "{{fields.nombre}} {{fields.hex}}"
+            hint: "Cada color tiene un nombre y el tono que se ve en el círculo y en la vista previa."
+            fields:
+              - { label: "Nombre", name: nombre, widget: string }
+              - { label: "Color", name: hex, widget: color, enableAlpha: false, allowInput: true }
+              - { label: "Marcado al entrar", name: inicial, widget: boolean, default: false, required: false, hint: "Activalo en un solo color. Si no hay ninguno, queda el primero." }
+          - { label: "Texto: otro color", name: otro_color_etiqueta, widget: string }
+          - { label: "Ejemplo dentro del campo «otro color»", name: otro_color_ejemplo, widget: string, required: false }
+
+          - { label: "Título del grupo Forma", name: titulo_forma, widget: string }
+          - label: "Formas"
+            name: formas
+            widget: list
+            label_singular: "forma"
+            allow_add: false
+            summary: "{{fields.nombre}}"
+            hint: "Los dibujos de la vista previa son fijos, por eso no se pueden agregar formas nuevas: podés cambiar el nombre, el orden y si se muestran. «Otra forma» deja que la persona escriba la que quiere."
+            fields:
+              - label: "Dibujo"
+                name: clave
+                widget: select
+                options:
+                  - { label: "Cilíndrica", value: cilindro }
+                  - { label: "Pilar", value: pilar }
+                  - { label: "Cónica", value: cono }
+                  - { label: "Esfera", value: esfera }
+                  - { label: "Cubo", value: cubo }
+                  - { label: "En frasco", value: jar }
+                  - { label: "Otra forma (texto libre)", value: otra }
+              - { label: "Nombre que se ve", name: nombre, widget: string }
+              - { label: "Mostrar", name: visible, widget: boolean, default: true }
+              - { label: "Marcada al entrar", name: inicial, widget: boolean, default: false, required: false, hint: "Activalo en una sola forma. Si no hay ninguna, queda la primera." }
+          - { label: "Texto: escribir otra forma", name: otra_forma_etiqueta, widget: string }
+          - { label: "Ejemplo dentro del campo «otra forma»", name: otra_forma_ejemplo, widget: string, required: false }
+          - { label: "Aviso bajo «otra forma»", name: otra_forma_aviso, widget: string, required: false }
+          - { label: "Resumen cuando eligen «otra forma»", name: resumen_otra_forma, widget: string, hint: "Aparece bajo el dibujo de la vela. Ej.: Forma a elección" }
+
+          - { label: "Título del grupo Detalles", name: titulo_detalles, widget: string }
+          - { label: "Texto: cantidad", name: cantidad_etiqueta, widget: string }
+          - { label: "Texto: notas", name: notas_etiqueta, widget: string }
+          - { label: "Ejemplo dentro del campo de notas", name: notas_ejemplo, widget: string, required: false }
+
+          - { label: "Texto del botón de enviar", name: boton_enviar, widget: string }
+          - { label: "Aviso bajo el botón", name: aviso_boton, widget: string, required: false }
+          - { label: "Mensaje de WhatsApp: primera línea", name: whatsapp_inicio, widget: string }
+          - { label: "Mensaje de WhatsApp: última línea", name: whatsapp_cierre, widget: string }
+
+      # --------------------------------------------------------------- CONTACTO
+      - name: contacto
+        label: "Contacto"
+        file: "content/contacto.json"
+        fields:
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Texto", name: texto, widget: text }
+          - { label: "Texto del botón de WhatsApp", name: boton_whatsapp, widget: string }
+
+      # -------------------------------------------------------------- INSTAGRAM
+      - name: instagram
+        label: "Instagram"
+        file: "content/instagram.json"
+        fields:
+          - { label: "Enlace al perfil de Instagram", name: url, widget: string, hint: "Ej.: https://www.instagram.com/fenix.aromatic/", pattern: ['^https?://', "Tiene que empezar con https://"] }
+          - { label: "Texto del botón en Contacto", name: texto_boton_contacto, widget: string }
+          - { label: "Texto del enlace en el pie de página", name: texto_pie, widget: string }

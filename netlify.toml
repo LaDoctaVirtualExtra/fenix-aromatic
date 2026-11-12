@@ -1,0 +1,16 @@
+# Fenix Aromatic - configuración de Netlify
+# El sitio es estático (sin compilación): Netlify publica la carpeta tal cual está en GitHub.
+[build]
+  publish = "."
+
+# El administrador no debe aparecer en Google
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Los textos del sitio (content/*.json) se revalidan siempre: los cambios se ven apenas termina el deploy
+[[headers]]
+  for = "/content/*"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

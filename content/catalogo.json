@@ -1,0 +1,134 @@
+{
+  "titulo": "Catálogo",
+  "descripcion": "Elegí la tuya y consultá disponibilidad por WhatsApp.",
+  "boton_consultar": "Consultar para comprar",
+  "boton_compartir": "Compartir",
+  "productos": [
+    {
+      "visible": true,
+      "ref": "FA-001",
+      "nombre": "Souvenirs llenos de elegancia",
+      "precio": "$ 6.500",
+      "descripcion": "Elegí el color de la rosa, la fragancia y el diseño de la etiqueta a tu gusto.",
+      "imagen": "/img/01.jpeg",
+      "imagen_alt": "Velas en vasos de vidrio redondos con rosa roja de cera y etiqueta Mis XV"
+    },
+    {
+      "visible": true,
+      "ref": "FA-002",
+      "nombre": "Ramitos aromáticos",
+      "precio": "$ 4.500",
+      "descripcion": "Souvenirs para bodas, bautismos, comuniones y eventos especiales.",
+      "imagen": "/img/02.jpeg",
+      "imagen_alt": "Ramitos aromáticos de arpillera con rosas de cera y flores secas"
+    },
+    {
+      "visible": true,
+      "ref": "FA-003",
+      "nombre": "Velas corona",
+      "precio": "$ 5.500",
+      "descripcion": "Elegí el color de la cera, los apliques brillantes, la fragancia y el diseño de la etiqueta a tu gusto.",
+      "imagen": "/img/03.jpeg",
+      "imagen_alt": "Velas en vasitos con forma de corona y cera verde, con etiqueta Mis XV"
+    },
+    {
+      "visible": true,
+      "ref": "FA-004",
+      "nombre": "Centros de mesa",
+      "precio": "$ 35.000",
+      "descripcion": "Bodas, aniversarios, XV años y celebraciones especiales. ¡Hacé tu reserva con anticipación! 📩👇",
+      "imagen": "/img/04.jpeg",
+      "imagen_alt": "Centro de mesa con rosas rojas de cera y flores secas, rodeado de velas con rosa"
+    },
+    {
+      "visible": true,
+      "ref": "FA-005",
+      "nombre": "Velas bicapa en azul",
+      "precio": "$ 10.000",
+      "descripcion": "Elegí el tono de la base (azul, rosa, verde, bordó), la fragancia y el texto del estampado a tu gusto.",
+      "imagen": "/img/05.jpeg",
+      "imagen_alt": "Velas bicapa en vaso de vidrio, azul y marfil, con el texto Mis XV"
+    },
+    {
+      "visible": true,
+      "ref": "FA-006",
+      "nombre": "Velas aromáticas con flores",
+      "precio": "$ 6.000",
+      "descripcion": "Escribinos por mensaje directo para pedir tu presupuesto según la cantidad de unidades.",
+      "imagen": "/img/06.jpeg",
+      "imagen_alt": "Velas en vasos con una flor de cera color durazno y etiqueta con iniciales"
+    },
+    {
+      "visible": true,
+      "ref": "FA-007",
+      "nombre": "Velas místicas",
+      "precio": "$ 10.000",
+      "descripcion": "Elegí el color de la cinta, los destellos de brillo, la fragancia y el diseño de la etiqueta a tu gusto.",
+      "imagen": "/img/07.jpeg",
+      "imagen_alt": "Velas místicas con luna y estrellas plateadas y moño bordó"
+    },
+    {
+      "visible": true,
+      "ref": "FA-008",
+      "nombre": "Velas con rosa en tono bordó",
+      "precio": "$ 7.500",
+      "descripcion": "Souvenirs de XV años, bodas, comuniones y eventos especiales. ¡Hacé tu reserva con anticipación! 📩👇",
+      "imagen": "/img/08.jpeg",
+      "imagen_alt": "Velas con rosa de cera bordó y moño de cinta sobre el vaso de vidrio"
+    },
+    {
+      "visible": true,
+      "ref": "FA-009",
+      "nombre": "Velas aromáticas con rosa en tono rojo pasión",
+      "precio": "$ 7.000",
+      "descripcion": "Elegí el tono de la rosa (rojo, bordó, rosa, azul), la fragancia y el estilo tipográfico a tu gusto.",
+      "imagen": "/img/09.jpeg",
+      "imagen_alt": "Vela con rosa de cera roja en vaso de vidrio, sostenida en la mano"
+    },
+    {
+      "visible": true,
+      "ref": "FA-010",
+      "nombre": "Velas corona de vidrio",
+      "precio": "$ 5.500",
+      "descripcion": "Un detalle lleno de dulzura, magia y elegancia pensado para sorprender a todos tus invitados. ✨🌸",
+      "imagen": "/img/10.jpeg",
+      "imagen_alt": "Velas rosas en coronas de vidrio con estrellitas, junto a velas con rosa de cera"
+    },
+    {
+      "visible": true,
+      "ref": "FA-011",
+      "nombre": "Difusores",
+      "precio": "$ 7.000",
+      "descripcion": "Un recuerdo distinguido, sutil y duradero que va a llenar de aroma y calidez el hogar de tus invitados. ✨🌿",
+      "imagen": "/img/11.jpeg",
+      "imagen_alt": "Difusores aromáticos con varillas y flores secas en bolsitas de organza"
+    },
+    {
+      "visible": true,
+      "ref": "FA-012",
+      "nombre": "Spray",
+      "precio": "$ 7.000",
+      "descripcion": "Elegí la fragancia (colonia bebé, connnety, lavanda, etc.), el diseño de la etiqueta y el color de la cinta a tu gusto.",
+      "imagen": "/img/12.jpeg",
+      "imagen_alt": "Sprays aromáticos en frascos de vidrio con moño rosa y etiqueta personalizada"
+    },
+    {
+      "visible": true,
+      "ref": "FA-013",
+      "nombre": "Caramelera de vidrio",
+      "precio": "$ 9.000",
+      "descripcion": "Escribinos por mensaje directo o consultanos al link de la bio para armar tu presupuesto personalizado según la cantidad. ¡Reservá tus souvenirs con anticipación! 📩👇",
+      "imagen": "/img/13.jpeg",
+      "imagen_alt": "Carameleras de vidrio con tapa y corona de strass, con velas de flores violetas"
+    },
+    {
+      "visible": true,
+      "ref": "FA-014",
+      "nombre": "Caramelera en frasco acanalado con flores violetas",
+      "precio": "$ 9.000",
+      "descripcion": "Un recuerdo moderno, delicado y super sofisticado para sorprender a tus invitados. ✨💜",
+      "imagen": "/img/14.jpeg",
+      "imagen_alt": "Velas en frascos de vidrio acanalado con flores violetas y moño lila"
+    }
+  ]
+}
