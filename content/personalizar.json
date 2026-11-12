@@ -1,20 +1,24 @@
 {
-  "titulo": "Personalizar",
-  "descripcion": "Elegí aroma, color y forma. La vista previa cambia con tu elección y el pedido sale por WhatsApp.",
-  "nota_vista_previa": "Vista previa orientativa. El resultado final puede variar levemente.",
-  "titulo_aroma": "Aroma",
   "aromas": [
     "Lavanda",
     "Vainilla",
     "Sándalo",
     "Canela",
-    "Cítrico",
-    "Coco",
-    "Rosa",
-    "Cedro",
-    "Higo"
+    "Cítrico"
   ],
-  "titulo_color": "Color",
+  "otra_forma_etiqueta": "Escribí la forma que querés",
+  "titulo_detalles": "Detalles",
+  "otra_forma_aviso": "La confirmamos con vos antes de hacerla.",
+  "boton_enviar": "Enviar pedido por WhatsApp",
+  "titulo_aroma": "Aroma",
+  "notas_ejemplo": "Iniciales, una frase, tamaño, fecha de entrega",
+  "descripcion": "Elegí aroma, color y forma. La vista previa cambia con tu elección y el pedido sale por WhatsApp.",
+  "otro_color_ejemplo": "Ej.: verde agua, bordó",
+  "otro_color_etiqueta": "¿Querés otro color? Escribilo acá (opcional)",
+  "notas_etiqueta": "Notas (opcional)",
+  "nota_vista_previa": "Vista previa orientativa. El resultado final puede variar levemente.",
+  "resumen_otra_forma": "Forma a elección",
+  "cantidad_etiqueta": "Cantidad",
   "colores": [
     {
       "nombre": "Marfil",
@@ -57,9 +61,8 @@
       "inicial": false
     }
   ],
-  "otro_color_etiqueta": "¿Querés otro color? Escribilo acá (opcional)",
-  "otro_color_ejemplo": "Ej.: verde agua, bordó",
-  "titulo_forma": "Forma",
+  "whatsapp_inicio": "Hola Fenix Aromatic, quiero pedir una vela personalizada:",
+  "whatsapp_cierre": "¿Me confirmás precio y tiempos? ¡Gracias!",
   "formas": [
     {
       "clave": "cilindro",
@@ -104,16 +107,9 @@
       "inicial": false
     }
   ],
-  "otra_forma_etiqueta": "Escribí la forma que querés",
-  "otra_forma_ejemplo": "Ej.: corazón, concha, gato sentado",
-  "otra_forma_aviso": "La confirmamos con vos antes de hacerla.",
-  "resumen_otra_forma": "Forma a elección",
-  "titulo_detalles": "Detalles",
-  "cantidad_etiqueta": "Cantidad",
-  "notas_etiqueta": "Notas (opcional)",
-  "notas_ejemplo": "Iniciales, una frase, tamaño, fecha de entrega",
-  "boton_enviar": "Enviar pedido por WhatsApp",
+  "titulo_forma": "Forma",
   "aviso_boton": "Se abre WhatsApp con el pedido ya escrito. Nada se envía hasta que lo mandes vos.",
-  "whatsapp_inicio": "Hola Fenix Aromatic, quiero pedir una vela personalizada:",
-  "whatsapp_cierre": "¿Me confirmás precio y tiempos? ¡Gracias!"
+  "otra_forma_ejemplo": "Ej.: corazón, concha, gato sentado",
+  "titulo": "Personalizar",
+  "titulo_color": "Color"
 }
